@@ -12,15 +12,15 @@
 		
 		
 		{% for p in posts %}
-		<li style="border-style: groove;  margin: 20px; padding: 10px; flex: 0 0 auto;" >
-		<span style=" border-style: groove; padding: 5px;">{{ p.usern }}<br></span><br>
+		<li style="  margin: 20px;  flex: 0 0 auto;" >
+		<span style=" padding: 5px; color: green">{{ p.usern }}<br></span><br>
 		{{ p.post }}
 		</li>
 		{%empty %}
 		<li>No Posts</li>
 		{% endfor %}	
-		<li style="border-style: groove;  margin: 20px; padding: 10px; flex: 0 0 auto;">
-			<span style=" border-style: groove; padding: 5px;">{{ user.username }}<br></span><br>
+		<li style=" margin: 20px; flex: 0 0 auto;">
+			<span style="  color: blue;">{{ user.username }}<br></span><br>
 			<form action="{% url 'index' %}" method="post">
 			{% csrf_token %}
 				<input type="text" name="note">
@@ -31,5 +31,5 @@
 
 	<hr>
 
-<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'logout' %}"><h3 style = "color: red;" >Logout</h3></a>
 {% endblock %}
